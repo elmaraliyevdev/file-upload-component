@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import FileUpload from './FileUpload';
+import { Container, Box, BorderBox } from './styles'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    const handleFileUpload = (file: File) => {
+        // Implement your logic to handle the uploaded file here
+        console.log('Uploaded file:', file);
+    };
+
+    return (
+        <Container>
+            <Box>
+                <BorderBox>
+                    <FileUpload onFileUpload={handleFileUpload}/>
+                </BorderBox>
+            </Box>
+        </Container>
+    );
+};
 
 export default App;
